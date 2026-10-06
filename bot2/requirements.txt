@@ -1,0 +1,10 @@
+# Python 3.11+
+kurigram>=2.2.0
+TgCrypto>=1.2.5
+motor>=3.6,<4
+pymongo>=4.9,<5
+cryptography>=43,<46
+python-dotenv>=1.0,<2
+uvloop>=0.21; platform_system != "Windows"
+# Included so the supplied test suite runs after a standard install.
+pytest>=8,<10

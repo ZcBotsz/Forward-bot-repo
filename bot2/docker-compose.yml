@@ -1,0 +1,8 @@
+services:
+  zc-forward-bot:
+    build: .
+    container_name: zc-forward-bot
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
