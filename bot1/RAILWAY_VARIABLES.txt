@@ -1,0 +1,19 @@
+# Railway -> Variables  (public GitHub pe .env upload NAHI karna)
+
+BOT_TOKEN=your_bot_token_from_BotFather
+ADMIN_IDS=8467972004,6312515331
+SOURCE_CHAT_ID=-1003415196836
+
+# TARGET: bot ke andar se set hota hai (bot list ENV ko override karta hai)
+#   /settarget   -> sirf 1 target
+#   /addtarget   -> list me add
+# TARGET_CHAT_ID / TARGET_CHAT_IDS sirf tab use hota hai jab bot list
+# khaali ho (pehli baar). Bot me target set karte hi ENV ignore.
+
+# Optional words:
+# BLOCKED_WORDS=spam,scam
+# REPLACE_WORDS=@old:@new|word:new
+
+# Bot commands (Railway deploy ke baad):
+#   /ping  /check  /preview  /clean on  /forward 45 13365
+#   /forward 45 13365   (1 se nahi — source ke id 1-44 khaali hain)

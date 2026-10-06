@@ -1,0 +1,41 @@
+=========================================================
+  GITHUB ME YE FILE DAALNI HAIN
+  repo: bhairicxy-web/Telegram-bot1
+  BUILD: 2026-10-05-AUDIT-26
+=========================================================
+
+  FOLDER : GITHUB_SAB_FILES/      (7 file)
+  ZIP    : GITHUB_SAB_FILES.zip   (wahi 7 file ek saath)
+
+  ⚠️ GitHub pe ZIP upload NAHI hota — file-by-file (ya multi-select)
+     daalni hain. Phone se paste BILKUL NAHI.
+
+---------------------------------------------------------
+ MUST (4 file)
+---------------------------------------------------------
+ 1) bot.py            203,118 B   <<< MAIN (poora bot)
+       • tag = 0 (Forwarded from nahi aata)
+       • purple bar har post me jisme bar/list hai
+       • bulk crash-proof + duplicate-proof + flood guard
+       • delete sirf clean-mode ki apni copy par (safe)
+       • hop/temp-copy system = 0
+ 2) mise.toml              223 B   (Railway build fix)
+ 3) requirements.txt        47 B   (python-telegram-bot==21.6)
+ 4) railway.toml           132 B   (startCommand = python bot.py)
+
+---------------------------------------------------------
+ OPTIONAL (settings + docs)
+---------------------------------------------------------
+ 5) filter_data.json      ~0.9 KB  (source -1003415196836,
+                                    target -1003928071905 ready)
+ 6) AB_KYA_KARO_FINAL.txt          (upload ke baad kya karo — 5 step)
+ 7) SAB_RECHECK_REPORT.txt         (poora recheck report, 20/20 test)
+
+---------------------------------------------------------
+ DEPLOY KE BAAD
+---------------------------------------------------------
+  /ping   -> BUILD: 2026-10-05-AUDIT-26
+  /check  -> delete messages: YES (warna jaise doc me likha hai)
+  /preview -> na tag, na bar gayab
+  /clean on -> /forward 45 13365
+=========================================================

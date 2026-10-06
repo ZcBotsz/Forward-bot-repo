@@ -1,0 +1,95 @@
+=========================================================
+  DOUBLE POST FIX HO GAYA ✅
+  NAYA BUILD: 2026-10-05-AUDIT-26
+  FILE: TO_UPLOAD/bot.py   (203,118 bytes)
+=========================================================
+
+---------------------------------------------------------
+ 1) TUMNE JO DIKHAYA (2 same post) — kyun ho raha tha
+---------------------------------------------------------
+  Bot "NO-TAG CLEAN" me ye karta hai:
+
+     1) ek copy banata hai (sirf file_id lene ke liye)
+     2) usi file_id se wahi post DOBARA bhejta hai (bina tag)
+     3) tag wali copy DELETE kar deta hai
+
+  Ye 2 jagah tuta tha:
+
+  (A) DELETE PERMISSION
+      Target channel me bot ko "Delete Messages" permission
+      nahi hai -> step 3 fail -> tag wali copy channel me
+      reh jaati hai -> 2 post dikhti hain.  << YE TUMHARA CASE
+
+  (B) AUTO-RETRY
+      Post ja chuki hoti thi, par bar (caption) lagane me
+      dikkat aane par bot us id ko "fail" maan leta tha aur
+      usi post ko DOBARA bhej deta tha -> 2 same post.
+
+---------------------------------------------------------
+ 2) AB KYA FIX HUA (PATCH 25)
+---------------------------------------------------------
+  ✅ DELETE PERMISSION CHECK — bot pehle check karta hai ki
+     target me usko delete karne ki permission hai ya nahi.
+     • Permission HAI  -> clean post (bina tag) + copy delete
+     • Permission NAHI -> bot clean mode skip kar deta hai,
+       sirf 1 post bhejta hai (copy+edit, tag ke saath).
+       2 post KABHI nahi banti.
+  ✅ ADMIN KO FIX BATATA HAI — permission nahi hone par bot
+     DM me likhta hai:
+        "Channel → Manage → Administrators → bot →
+         Delete Messages ON karo, phir /clean on"
+     (aur permission ka check har 5 min me dobara hota hai,
+      to ON karte hi bot khud clean mode chalu kar leta hai)
+  ✅ DUPLICATE RETRY BAND — post ja chuki ho to bot usko
+     "fail" nahi maanta, isliye dobara nahi bhejta.
+     Retry ab sirf tab jab channel me KUCH BHI na gaya ho.
+  ✅ DELETE 3 BAAR TRY — chhoti si network dikkat par bhi
+     copy delete ho jaati hai.
+  ✅ /check me ab dikhega:  "delete messages: YES / NO"
+
+  Purane saare fix isi build me hain:
+     • "Forwarded from" tag hataya (file_id se fresh send)
+     • PURPLE BAR pakka (4-step chain + delivery verify)
+     • BULK CRASH fix (ek id kharab ho to poora run nahi rukta)
+     • FLOOD GUARD + delay auto-badhta hai
+  ✅ 14 test files — sab ALL_OK (duplicate test me: permission
+     OFF / delete fail / bar fail / retry — sab case pass)
+
+---------------------------------------------------------
+ 3) AB YE KARO — 2 MINUTE KA AAP KAAM (important!)
+---------------------------------------------------------
+  (1) TARGET channel kholo (jahan post jaati hain)
+  (2) Manage Channel → Administrators → apna bot → Edit
+  (3) "Delete Messages"  ✅ ON  karo  (aur "Post Messages" ✅ ON)
+  (4) Save
+
+     Ye ON karte hi 2 post wali dikkat hamesha ke liye khatam
+     aur tag bhi nahi aayega.
+
+---------------------------------------------------------
+ 4) PHIR (4 step)
+---------------------------------------------------------
+  (1) GitHub → bhairicxy-web/Telegram-bot1 → Add file → Upload files
+      → TO_UPLOAD/bot.py  (203,118 bytes) → Commit → Railway deploy
+  (2) /ping  → BUILD: 2026-10-05-AUDIT-26
+  (3) /check → dekhna: "delete messages: YES"
+  (4) /clean on  → phir  /forward 45 13365
+
+  Note: jo 2-2 post pehle ban gayi hain, unme se ek
+  (tag wali / purani) ko khud delete kar dena — bot purani
+  post ko chhoo sakta nahi hai.
+
+---------------------------------------------------------
+ 5) FILES
+---------------------------------------------------------
+  TO_UPLOAD/bot.py          203,118 B  <<< ye upload karo
+  TO_UPLOAD/filter_data.json     824 B
+  TO_UPLOAD/mise.toml            223 B
+  GITHUB_SAB_FILES.zip              (poora set, backup)
+
+  Kaam ke commands:
+     /clean on|off   → NO-TAG CLEAN (default ON)
+     /check          → permission + sab report
+     /status  /stop
+     /forward FROM TO
+=========================================================

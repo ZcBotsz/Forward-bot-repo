@@ -1,0 +1,30 @@
+=========================================================
+  TOKEN RESET KARO — NAYA BOT BANANE KI ZAROORAT NAHI
+  (tum channel owner nahi ho, isliye naya bot admin nahi ban sakta)
+=========================================================
+
+DIKKAT:
+  • Naya bot banao -> usko source/target me ADMIN banana padega
+  • Tum owner nahi ho -> admin add nahi kar sakte ❌
+  • Purana bot ("Forward by r") PEHLE SE dono channel me admin hai ✅
+
+SOLUTION (sabse aasan, 2 minute):
+  👉 WAHI BOT RAKHO. Naya bot MAT banao.
+     Sirf us bot ka TOKEN RESET karo (BotFather se):
+       /mybots -> bot chuno -> API Token -> Revoke current token
+     • Bot channel ke admin se NAHI hatta (rights same rahenge)
+     • Purana (adhoora) instance turant mar jata hai
+       (uske paas ab purana token hai = invalid = 401)
+     • Railway -> Variables -> BOT_TOKEN me naya token paste -> deploy
+
+  Ek teer se 2 shikar: purana instance khatam + naya code live.
+
+---------------------------------------------------------
+ RESET KE BAAD
+---------------------------------------------------------
+  1) Railway -> Variables -> BOT_TOKEN = naya token -> Save
+  2) GitHub -> latest bot.py upload (AUDIT-26) -> Railway deploy
+  3) /ping   -> BUILD: 2026-10-05-AUDIT-26
+  4) /check  -> sab ✅ (delete messages: YES)
+  5) /preview -> na tag, na bar gayab
+ =========================================================

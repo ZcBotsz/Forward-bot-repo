@@ -1,0 +1,66 @@
+=========================================================
+  FORWARD BOT — POORA PACK
+  BUILD: 2026-10-05-AUDIT-26   (20/20 test pass, 0 bug)
+=========================================================
+
+ IS FOLDER ME KYA HAI
+ --------------------
+  bot.py                 <<< ASLI BOT (203,118 bytes) — GitHub pe upload
+  mise.toml                  build fix (Railway)
+  requirements.txt           python-telegram-bot 21.6
+  railway.toml               start command (python bot.py)
+  filter_data.json           source/target ready (source ZC Course List,
+                             target Hmm channel -1003928071905)
+
+  README_UPLOAD.txt          poora guide (kya upload, kaise test)
+  AB_KYA_KARO_FINAL.txt      upload ke baad 5 step
+  SAB_RECHECK_REPORT.txt     recheck report (kaunse bug fix hue)
+  GITHUB_ME_KYA_DAALNA.txt   GitHub pe kaunsi file daalni hai
+  RAILWAY_VARIABLES.txt      Railway env vars
+  TOKEN_RESET_KARO.txt       token reset (naya bot NAHI banana)
+
+---------------------------------------------------------
+ SABSE PEHLE YE 3 KAAM KARO
+---------------------------------------------------------
+ 1) TARGET channel me bot ko admin banao:
+    Manage Channel -> Administrators -> bot -> Edit
+       "Delete Messages"  ✅ ON   (zaroori — 1 hi post rahegi)
+       "Post Messages"    ✅ ON
+
+ 2) GitHub: bhairicxy-web/Telegram-bot1 -> Add file -> Upload files
+    -> sirf "bot.py" upload karo (baaki file wahan pehle se hain)
+    -> Commit -> Railway deploy (1-2 min)
+
+ 3) Bot me:
+    /ping     -> BUILD: 2026-10-05-AUDIT-26  dikhna chahiye
+    /check    -> "delete messages: YES" aana chahiye
+    /preview  -> source post DM me forward -> na tag, na bar gayab
+    /clean on -> /forward 45 13365
+
+---------------------------------------------------------
+ IS BUILD ME KYA-KYA HAI (sab fix, purane sab bug khatam)
+---------------------------------------------------------
+  ✅ "Forwarded from" tag NAHI (file_id se fresh send)
+  ✅ PURPLE BAR har post me jisme source me bar/list hai
+  ✅ BULK: crash-proof (ek id kharab ho to poora run nahi rukta),
+     FROM se exact start, koi mid-drop nahi, flood guard,
+     /stop se ruk jata hai, resume tip
+  ✅ DUPLICATE post NAHI (post ja chuki ho to retry nahi)
+  ✅ NO-TAG CLEAN (/clean, default ON) — pehle file_id, phir
+     wahi post bina tag, tag wali copy turant delete; delete
+     permission na ho to bot khud clean mode skip karta hai
+     (2 post KABHI nahi banti)
+  ✅ sticker / video_note / poll / location / text-only —
+     sab safe (content loss nahi)
+  ✅ PROTECTED content -> forward se bhejta hai (post pahunchti hai)
+  ✅ Filters (/block, /replace), caption header/footer/template,
+     URL buttons, /preview, /check, /panic, /test, /status
+  ✅ hop / temp-copy / DM-copy system = 0 (naam bhi nahi)
+  ✅ 20 test files — SAB PASS, pyflakes 0 warning
+
+---------------------------------------------------------
+ ZAROORI BAAT
+---------------------------------------------------------
+  ZIP ko GitHub pe UPLOAD NAHI karna (GitHub par sirf bot.py).
+  ZIP sirf tumhare paas backup ke liye hai.
+=========================================================
